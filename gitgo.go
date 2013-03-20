@@ -55,7 +55,7 @@ func (g *GitGo) CurBranch() (string, error) {
 }
 
 func (g *GitGo) Branches(pattern string) ([]string, error) {
-	out, err := g.Run("for-each-ref", "--format=%(refname:short)", "refs/heads/" + pattern)
+	out, err := g.Run("for-each-ref", "--format=%(refname:short)", "refs/heads/"+pattern)
 	if err != nil {
 		return nil, err
 	}
